@@ -1,0 +1,39 @@
+.back_box {
+    background-color: purple;
+}
+
+.h2_font {
+    color: #fff;
+    position: relative;
+}
+
+.h2_font::after {
+    content: attr(data-title);
+    color: transparent;
+    background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255));
+    -webkit-background-clip: text;/* 针对浏览器内核，修改兼容写法 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(var(--circle) at 0% 50%);
+    animation: tempAnim 10s ease-in-out infinite;
+}
+
+@keyframes tempAnim {
+    0% {
+        clip-path: circle(var(--circle) at 0% 50%);
+    }
+
+    50% {
+        clip-path: circle(var(--circle) at 100% 50%);
+    }
+
+    100% {
+        clip-path: circle(var(--circle) at 0% 50%);
+    }
+}
+
+img {
+    color: transparent;
+    clip-path: ellipse(20px 40px at 50% 20%);
+}
